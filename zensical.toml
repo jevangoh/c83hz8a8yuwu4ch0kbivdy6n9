@@ -1,0 +1,67 @@
+[project]
+site_name = "c83hz8a8yuwu4ch0kbivdy6n9"
+site_url = "https://c83hz8a8yuwu4ch0kbivdy6n9.readthedocs.io/en/latest/"
+site_description = ""
+site_author = "Jevan Goh"
+
+docs_dir = "documentation"
+language = "en"
+
+repo_url = "https://github.com/jevangoh/c83hz8a8yuwu4ch0kbivdy6n9"
+edit_uri = "tree/main/c83hz8a8yuwu4ch0kbivdy6n9/"
+
+extra_css = [
+    "stylesheets/dark.css",
+    "stylesheets/light.css"
+]
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.gfm_admonition]
+
+# --- Theme ---
+[project.theme]
+features = [
+  "announce.dismiss",
+  "content.code.annotate",
+  "content.code.copy",
+  "content.code.select",
+  "content.footnote.tooltips",
+  "content.tooltips",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  "navigation.path",
+  "navigation.sections",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+  "content.action.view"
+]
+
+[project.theme.icon]
+repo = "fontawesome/brands/git-alt"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "custom"
+accent = "custom"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "blue"
+accent = "light blue"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+
+# --- Navigation Tree ---
+
