@@ -19,7 +19,7 @@ RequestId: TypeAlias = Uuid
 def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
     model_class: Type[Model], api_base_url: str
 ) -> Type[Model]:
-    class _AutoCreate(model_class, table=False):
+    class _AutoCreate(model_class, table=False):  # type: ignore[call-arg, valid-type, misc]
         _active_requests: dict[RequestId, AwaitEvent] = Private(default_factory=dict)
 
         @model_validator(mode="after")
