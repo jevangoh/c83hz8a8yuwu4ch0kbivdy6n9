@@ -22,11 +22,11 @@ dev = [
     "ruff>=0.14.13,<0.15",
     "prek>=0.2.30,<0.3",
     "mypy>=1.19.1,<2",
-    "copier>=9.14.3,<10"
+    "copier>=9.18.2,<10"
 ]
 docs = [
     "zensical>=0.0.47,<0.0.48",
-    "pymdown-extensions>=10.20,<11"
+    "pymdown-extensions>=12.2,<13"
 ]
 
 ######################################################################################################
@@ -57,10 +57,11 @@ solve-group = "default"
 # ==================================== features ====================================
 # ----------------------------- dev -----------------------------
 [tool.pixi.feature.dev.dependencies]
-git = ">=2.54.0,<3"
-gh = ">=2.83.2,<3"
-nodejs = ">=24,<25.3"
-prettier = ">=3.8.3"
+git = ">=2.56.0,<3"
+gh = ">=2.102.0,<3"
+nodejs = ">=26.10.0,<26.11"
+prettier = ">=3.9.6,<4"
+doppler-cli = ">=3.77.1,<4"
 
 [tool.pixi.feature.dev.tasks]
 setup = "prek install"
@@ -80,13 +81,14 @@ build_package = "python -m build"
 curl = ">=8.22.0,<9"
 
 [tool.pixi.feature.docs.pypi-dependencies]
-zensical = ">=0.0.47,<0.0.48"
-markdown-gfm-admonition = ">=0.3.0,<0.4"
+markdown-gfm-admonition = ">=0.3.0, <0.4"
 
 [tool.pixi.feature.docs.tasks]
 build_docs = "zensical build --config-file zensical.toml"
-create_readthedocs = "curl -f -s -X POST https://app.readthedocs.org/api/v3/projects/ -H \"Authorization: Token $PA0DBVCU05YKU48G8HCUNB2G3\" -H \"Content-Type: application/json\" -d '{\"name\": \"c83hz8a8yuwu4ch0kbivdy6n9\", \"repository\": {\"url\": \"https://github.com/jevangoh/c83hz8a8yuwu4ch0kbivdy6n9\", \"type\": \"git\"}, \"default_branch\": \"main\", \"programming_language\": \"py\"}'"
-build_readthedocs = "curl -f -s -X POST https://app.readthedocs.org/api/v3/projects/c83hz8a8yuwu4ch0kbivdy6n9/versions/main/builds/ -H \"Authorization: Token $PA0DBVCU05YKU48G8HCUNB2G3\""
+create_readthedocs_with_manual_secrets_injection = "curl -f -s -X POST https://app.readthedocs.org/api/v3/projects/ -H \"Authorization: Token $PA0DBVCU05YKU48G8HCUNB2G3\" -H \"Content-Type: application/json\" -d '{\"name\": \"c83hz8a8yuwu4ch0kbivdy6n9\", \"repository\": {\"url\": \"https://github.com/jevangoh/c83hz8a8yuwu4ch0kbivdy6n9\", \"type\": \"git\"}, \"default_branch\": \"main\", \"programming_language\": \"py\"}'"
+create_readthedocs = "doppler run --token \"$AZU4V7WTFF38YLYNTQXQI0B7G\" -- pixi run create_readthedocs_with_manual_secrets_injection"
+build_readthedocs_with_manual_secrets_injection = "curl -f -s -X POST https://app.readthedocs.org/api/v3/projects/c83hz8a8yuwu4ch0kbivdy6n9/versions/main/builds/ -H \"Authorization: Token $PA0DBVCU05YKU48G8HCUNB2G3\""
+build_readthedocs = "doppler run --token \"$AZU4V7WTFF38YLYNTQXQI0B7G\" -- pixi run build_readthedocs_with_manual_secrets_injection"
 
 ######################################################################################################
 #                                                ruff                                                #
