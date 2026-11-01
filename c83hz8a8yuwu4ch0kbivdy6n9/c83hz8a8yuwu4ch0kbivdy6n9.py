@@ -1,25 +1,30 @@
 from __future__ import annotations
 
-from typing import Any, Type, Self, get_origin
+from typing import Any, Type, Self, get_origin, TypeAlias
+from uuid import UUID as Uuid, uuid4 as generate_id
+from threading import Event as AwaitEvent
 
-from pydantic import model_validator
+from pydantic import model_validator, PrivateAttr as Private
 from pydantic.fields import FieldInfo
-
 from httpx import get, post, patch, Response
-
 from PySide6.QtCore import Qt
 
 import skkrfl6asevwuubvfioii3hlm as BaseModel
 import eibzpkxvd6ejecypxs4pqrez3 as ReadableAndWritableDependency
 import q6uwngw0268p337x2mz5z8yi3 as the_redis_client
 
+RequestId: TypeAlias = Uuid
+
 
 def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
     model_class: Type[Model], api_base_url: str
 ) -> Type[Model]:
     class _AutoCreate(model_class, table=False):
+        _active_requests: dict[RequestId, AwaitEvent] = Private(default_factory=dict)
+
         @model_validator(mode="after")
         def create(self) -> Self:
+            the_redis_client._.subscribe(f"{self.id}_updated")
             _object_exists_response_: Response = get(
                 f"{api_base_url}/{self.__tablename__}/{self.id}"
             )
@@ -31,11 +36,10 @@ def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
             the_redis_client._.object_updated.connect(
                 self.handle_redis_update, Qt.ConnectionType.DirectConnection
             )
-            the_redis_client._.subscribe(f"{self.id}_updated")
 
             return self
 
-        def handle_redis_update(self, id: str) -> None:
+        def handle_redis_update(self, id: str, request_id: RequestId) -> None:
             if id != str(self.id):
                 return
             _get_object_response_: Response = get(f"{api_base_url}/{self.__tablename__}/{self.id}")
@@ -49,6 +53,8 @@ def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
                     _object_attribute_.value = _new_value_
                 else:
                     setattr(self, _attribute_name_, _new_value_)
+            if request_id in self._active_requests:
+                self._active_requests[request_id].set()
 
         def __setattr__(self, name: str, value: Any) -> None:
             _model_fields_: dict[str, FieldInfo] = type(self).model_fields
@@ -58,11 +64,16 @@ def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
                 if isinstance(_origin_class_, type) and issubclass(
                     _origin_class_, ReadableAndWritableDependency._
                 ):
+                    _request_id_: RequestId = generate_id()
+                    _await_event_: AwaitEvent = AwaitEvent()
+                    self._active_requests[_request_id_] = _await_event_
                     _object_exists_response_: Response = patch(
                         f"{api_base_url}/{self.__tablename__}/{self.id}",
                         json={name: value},
+                        headers={"request_id": str(_request_id_)},
                     )
                     _object_exists_response_.raise_for_status()
+                    _await_event_.wait()
                     return
             super().__setattr__(name, value)
 
