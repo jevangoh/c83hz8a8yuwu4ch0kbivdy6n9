@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any, Type, Self, get_origin, TypeAlias
 from uuid import UUID as Uuid, uuid4 as generate_id
 from threading import Event as AwaitEvent
+from json import dumps
 
 from pydantic import model_validator, PrivateAttr as Private
 from pydantic.fields import FieldInfo
@@ -11,7 +12,8 @@ from PySide6.QtCore import Qt
 
 import skkrfl6asevwuubvfioii3hlm as BaseModel
 import eibzpkxvd6ejecypxs4pqrez3 as ReadableAndWritableDependency
-import q6uwngw0268p337x2mz5z8yi3 as the_redis_client
+import q6uwngw0268p337x2mz5z8yi3 as the_redis_listening_thread
+import msjzm0ilrcvjjguhp29y62uzk as the_redis_client
 
 RequestId: TypeAlias = Uuid
 
@@ -24,7 +26,7 @@ def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
 
         @model_validator(mode="after")
         def create(self) -> Self:
-            the_redis_client._.subscribe(f"{self.id}_updated")
+            the_redis_listening_thread._.register(self.id)
             _object_exists_response_: Response = get(
                 f"{api_base_url}/{self.__tablename__}/{self.id}"
             )
@@ -33,15 +35,13 @@ def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
                     f"{api_base_url}/{self.__tablename__}", json=self.model_dump(mode="json")
                 )
                 _create_object_response_.raise_for_status()
-            the_redis_client._.object_updated.connect(
+            the_redis_listening_thread._.active_objects[self.id].updated.connect(
                 self.handle_redis_update, Qt.ConnectionType.DirectConnection
             )
 
             return self
 
-        def handle_redis_update(self, id: str, request_id: RequestId) -> None:
-            if id != str(self.id):
-                return
+        def handle_redis_update(self, request_id: RequestId) -> None:
             _get_object_response_: Response = get(f"{api_base_url}/{self.__tablename__}/{self.id}")
             _get_object_response_.raise_for_status()
             _object_data: dict[str, Any] = _get_object_response_.json()
@@ -70,9 +70,12 @@ def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
                     _object_exists_response_: Response = patch(
                         f"{api_base_url}/{self.__tablename__}/{self.id}",
                         json={name: value},
-                        headers={"request_id": str(_request_id_)},
                     )
                     _object_exists_response_.raise_for_status()
+                    the_redis_client._.publish(
+                        "updated",
+                        dumps({"object_id": str(self.id), "request_id": str(_request_id_)}),
+                    )
                     _await_event_.wait()
                     return
             super().__setattr__(name, value)
