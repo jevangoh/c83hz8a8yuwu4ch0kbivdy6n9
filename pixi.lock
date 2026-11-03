@@ -56,7 +56,7 @@ environments:
         - pypi: https://files.pythonhosted.org/packages/be/82/c1c6932f9849bc5e75c93c38a29419505a6e3e0037261e28f3e7ecbf2751/shiboken6-6.9.3-cp39-abi3-manylinux_2_28_x86_64.whl
         - pypi: https://github.com/jevangoh/eibzpkxvd6ejecypxs4pqrez3/releases/download/v0.0.2/eibzpkxvd6ejecypxs4pqrez3-0.0.2-py3-none-any.whl
         - pypi: https://github.com/jevangoh/msjzm0ilrcvjjguhp29y62uzk/releases/download/v0.0.1/msjzm0ilrcvjjguhp29y62uzk-0.0.1-py3-none-any.whl
-        - pypi: https://github.com/jevangoh/q6uwngw0268p337x2mz5z8yi3/releases/download/v0.0.4/q6uwngw0268p337x2mz5z8yi3-0.0.4-py3-none-any.whl
+        - pypi: https://github.com/jevangoh/q6uwngw0268p337x2mz5z8yi3/releases/download/v0.0.6/q6uwngw0268p337x2mz5z8yi3-0.0.6-py3-none-any.whl
         - pypi: https://github.com/jevangoh/skkrfl6asevwuubvfioii3hlm/releases/download/v0.0.3/skkrfl6asevwuubvfioii3hlm-0.0.3-py3-none-any.whl
         - pypi: https://github.com/jevangoh/xtqz1bv8mlviwo7a892eslt6x/releases/download/v0.0.2/xtqz1bv8mlviwo7a892eslt6x-0.0.2-py3-none-any.whl
       win-64:
@@ -102,7 +102,7 @@ environments:
         - pypi: https://files.pythonhosted.org/packages/a1/da/8e8514fc29ea916c3cd71a524480b77409e19ed12d709e8a5d73be089b81/pyside6-6.12.0-cp310-abi3-win_amd64.whl
         - pypi: https://github.com/jevangoh/eibzpkxvd6ejecypxs4pqrez3/releases/download/v0.0.2/eibzpkxvd6ejecypxs4pqrez3-0.0.2-py3-none-any.whl
         - pypi: https://github.com/jevangoh/msjzm0ilrcvjjguhp29y62uzk/releases/download/v0.0.1/msjzm0ilrcvjjguhp29y62uzk-0.0.1-py3-none-any.whl
-        - pypi: https://github.com/jevangoh/q6uwngw0268p337x2mz5z8yi3/releases/download/v0.0.4/q6uwngw0268p337x2mz5z8yi3-0.0.4-py3-none-any.whl
+        - pypi: https://github.com/jevangoh/q6uwngw0268p337x2mz5z8yi3/releases/download/v0.0.6/q6uwngw0268p337x2mz5z8yi3-0.0.6-py3-none-any.whl
         - pypi: https://github.com/jevangoh/skkrfl6asevwuubvfioii3hlm/releases/download/v0.0.3/skkrfl6asevwuubvfioii3hlm-0.0.3-py3-none-any.whl
         - pypi: https://github.com/jevangoh/xtqz1bv8mlviwo7a892eslt6x/releases/download/v0.0.2/xtqz1bv8mlviwo7a892eslt6x-0.0.2-py3-none-any.whl
   dev:
@@ -212,7 +212,7 @@ environments:
         - pypi: https://files.pythonhosted.org/packages/fd/dc/e72a1449544aeffa3dbe878c6340bcec98ba4eebabe7a592414064b0ae8d/zensical-0.0.47-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
         - pypi: https://github.com/jevangoh/eibzpkxvd6ejecypxs4pqrez3/releases/download/v0.0.2/eibzpkxvd6ejecypxs4pqrez3-0.0.2-py3-none-any.whl
         - pypi: https://github.com/jevangoh/msjzm0ilrcvjjguhp29y62uzk/releases/download/v0.0.1/msjzm0ilrcvjjguhp29y62uzk-0.0.1-py3-none-any.whl
-        - pypi: https://github.com/jevangoh/q6uwngw0268p337x2mz5z8yi3/releases/download/v0.0.4/q6uwngw0268p337x2mz5z8yi3-0.0.4-py3-none-any.whl
+        - pypi: https://github.com/jevangoh/q6uwngw0268p337x2mz5z8yi3/releases/download/v0.0.6/q6uwngw0268p337x2mz5z8yi3-0.0.6-py3-none-any.whl
         - pypi: https://github.com/jevangoh/skkrfl6asevwuubvfioii3hlm/releases/download/v0.0.3/skkrfl6asevwuubvfioii3hlm-0.0.3-py3-none-any.whl
         - pypi: https://github.com/jevangoh/xtqz1bv8mlviwo7a892eslt6x/releases/download/v0.0.2/xtqz1bv8mlviwo7a892eslt6x-0.0.2-py3-none-any.whl
       win-64:
@@ -299,7 +299,7 @@ environments:
         - pypi: https://files.pythonhosted.org/packages/fd/a1/1b4233d255bdd0b38a1f284feeb1c143ca508c19184964e22f8d837ec851/mypy-1.20.2-cp314-cp314-win_amd64.whl
         - pypi: https://github.com/jevangoh/eibzpkxvd6ejecypxs4pqrez3/releases/download/v0.0.2/eibzpkxvd6ejecypxs4pqrez3-0.0.2-py3-none-any.whl
         - pypi: https://github.com/jevangoh/msjzm0ilrcvjjguhp29y62uzk/releases/download/v0.0.1/msjzm0ilrcvjjguhp29y62uzk-0.0.1-py3-none-any.whl
-        - pypi: https://github.com/jevangoh/q6uwngw0268p337x2mz5z8yi3/releases/download/v0.0.4/q6uwngw0268p337x2mz5z8yi3-0.0.4-py3-none-any.whl
+        - pypi: https://github.com/jevangoh/q6uwngw0268p337x2mz5z8yi3/releases/download/v0.0.6/q6uwngw0268p337x2mz5z8yi3-0.0.6-py3-none-any.whl
         - pypi: https://github.com/jevangoh/skkrfl6asevwuubvfioii3hlm/releases/download/v0.0.3/skkrfl6asevwuubvfioii3hlm-0.0.3-py3-none-any.whl
         - pypi: https://github.com/jevangoh/xtqz1bv8mlviwo7a892eslt6x/releases/download/v0.0.2/xtqz1bv8mlviwo7a892eslt6x-0.0.2-py3-none-any.whl
 packages:
@@ -1456,7 +1456,7 @@ packages:
       - httpx>=0.28.1,<0.29
       - msjzm0ilrcvjjguhp29y62uzk>=0.0.1,<0.0.2
       - pydantic>=2.14.1,<3
-      - q6uwngw0268p337x2mz5z8yi3>=0.0.4,<0.0.5
+      - q6uwngw0268p337x2mz5z8yi3>=0.0.6,<0.0.7
       - skkrfl6asevwuubvfioii3hlm>=0.0.3,<0.0.4
     requires_python: ">=3.14"
   - pypi: https://files.pythonhosted.org/packages/02/41/ba3d52fe2acd942ebf71eb02b3bdf0897f7f6f4ce8f52289cb50228e48d3/pyside6_addons-6.12.0-cp310-abi3-win_amd64.whl
@@ -2071,11 +2071,12 @@ packages:
     requires_dist:
       - redis>=8.1.0,<9
     requires_python: ">=3.14"
-  - pypi: https://github.com/jevangoh/q6uwngw0268p337x2mz5z8yi3/releases/download/v0.0.4/q6uwngw0268p337x2mz5z8yi3-0.0.4-py3-none-any.whl
+  - pypi: https://github.com/jevangoh/q6uwngw0268p337x2mz5z8yi3/releases/download/v0.0.6/q6uwngw0268p337x2mz5z8yi3-0.0.6-py3-none-any.whl
     name: q6uwngw0268p337x2mz5z8yi3
-    version: 0.0.4
+    version: 0.0.6
     index: https://jevangoh.github.io/as1oocnl0leb61sj1yew20lt2/
     requires_dist:
+      - msjzm0ilrcvjjguhp29y62uzk>=0.0.1,<0.0.2
       - pyside6>=6.9.3,<7
       - redis>=8.1.0,<9
     requires_python: ">=3.14"
