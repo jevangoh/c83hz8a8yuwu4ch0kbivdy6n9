@@ -1,4 +1,5 @@
-from importlib.metadata import version, PackageNotFoundError
+from importlib.metadata import PackageNotFoundError, version
+
 from .c83hz8a8yuwu4ch0kbivdy6n9 import c83hz8a8yuwu4ch0kbivdy6n9 as _
 
 try:
