@@ -64,8 +64,8 @@ def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
                     _origin_class_, ReadableAndWritableDependency._
                 ):
                     if self.base_url is None:
-                        _object_attribute_: ReadableAndWritableDependency._ = cast(
-                            ReadableAndWritableDependency._, getattr(self, name)
+                        _object_attribute_: ReadableAndWritableDependency._[Any] = cast(
+                            ReadableAndWritableDependency._[Any], getattr(self, name)
                         )
                         if _object_attribute_.value == value:
                             return
