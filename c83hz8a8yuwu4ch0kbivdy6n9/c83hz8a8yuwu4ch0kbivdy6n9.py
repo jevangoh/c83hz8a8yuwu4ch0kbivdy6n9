@@ -103,7 +103,7 @@ def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
                     return
             super().__setattr__(name, value)
 
-        def delete(self):
+        def delete(self) -> None:
             if self.base_url is None:
                 return
             _delete_object_response_: Response = delete(
