@@ -5,16 +5,21 @@ from threading import Event as AwaitEvent
 from typing import Any, cast, get_origin
 from uuid import UUID as Uuid
 from uuid import uuid4 as generate_id
+from weakref import finalize as Finalizer
 
 import eibzpkxvd6ejecypxs4pqrez3 as ReadableAndWritableDependency
 import msjzm0ilrcvjjguhp29y62uzk as the_redis_client
 import q6uwngw0268p337x2mz5z8yi3 as the_redis_listening_thread
 import skkrfl6asevwuubvfioii3hlm as BaseModel
-from httpx import Response, get, patch, post
+from httpx import Response, delete, get, patch, post
 from pydantic.fields import FieldInfo
 from PySide6.QtCore import Qt
 
-type RequestId = Uuid
+type _RequestId = Uuid
+
+
+def unregister_object_from_redis(object_id: Uuid) -> None:
+    the_redis_listening_thread._.unregister(object_id)
 
 
 def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
@@ -27,6 +32,8 @@ def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
             if self.base_url is None:
                 return
 
+            Finalizer(self, unregister_object_from_redis, self.id)
+
             the_redis_listening_thread._.register(self.id)
             _object_exists_response_: Response = get(
                 f"{self.base_url}/{self.__tablename__}/{self.id}"
@@ -36,11 +43,19 @@ def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
                     f"{self.base_url}/{self.__tablename__}", json=self.model_dump(mode="json")
                 )
                 _create_object_response_.raise_for_status()
-            the_redis_listening_thread._.active_objects[self.id].updated.connect(
+            the_redis_listening_thread._.update_signals[self.id].emitted.connect(
                 self.handle_redis_update, Qt.ConnectionType.DirectConnection
             )
+            the_redis_listening_thread._.delete_signals[self.id].emitted.connect(
+                self.handle_redis_delete, Qt.ConnectionType.DirectConnection
+            )
 
-        def handle_redis_update(self, request_id: RequestId) -> None:
+        def handle_redis_delete(self) -> None:
+            the_redis_listening_thread._.unregister(self.id)
+            self._deleted_signal.emitted.emit()
+            self._active_delete_request.set()
+
+        def handle_redis_update(self, request_id: _RequestId) -> None:
             _get_object_response_: Response = get(f"{self.base_url}/{self.__tablename__}/{self.id}")
             _get_object_response_.raise_for_status()
             _object_data: dict[str, Any] = _get_object_response_.json()
@@ -72,7 +87,7 @@ def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
                         _object_attribute_.value = value
                         return
 
-                    _request_id_: RequestId = generate_id()
+                    _request_id_: _RequestId = generate_id()
                     _await_event_: AwaitEvent = AwaitEvent()
                     self._active_requests[_request_id_] = _await_event_
                     _object_exists_response_: Response = patch(
@@ -87,6 +102,23 @@ def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
                     _await_event_.wait()
                     return
             super().__setattr__(name, value)
+
+        def delete(self):
+            if self.base_url is None:
+                return
+            _delete_object_response_: Response = delete(
+                f"{self.base_url}/{self.__tablename__}/{self.id}"
+            )
+            _delete_object_response_.raise_for_status()
+            the_redis_client._.publish(
+                "deleted", dumps({"object_id": str(self.id), "request_id": str(generate_id())})
+            )
+            self._active_delete_request.wait()
+
+        def __del__(self) -> None:
+            if self.base_url is None:
+                return
+            the_redis_listening_thread._.unregister(self.id)
 
     _AutoCreate.default_base_url = default_base_url
 
