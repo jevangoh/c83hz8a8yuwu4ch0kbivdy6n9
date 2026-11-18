@@ -27,7 +27,7 @@ def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
     model_class: type[Model], base_url: str
 ) -> type[Model]:
 
-    class _AutoCreate(model_class, table=False):  # type: ignore[call-arg, valid-type, misc]
+    class _Remote(model_class, table=False):  # type: ignore[call-arg, valid-type, misc]
         _base_url: str = Private(default=base_url)
 
         _active_delete_request: AwaitEvent = Private(default_factory=AwaitEvent)
@@ -113,4 +113,4 @@ def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
         def __del__(self) -> None:
             the_redis_listening_thread._.unregister(self.id)
 
-    return _AutoCreate
+    return _Remote
