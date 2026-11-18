@@ -136,7 +136,7 @@ environments:
         - pypi: https://github.com/jevangoh/eibzpkxvd6ejecypxs4pqrez3/releases/download/v0.0.2/eibzpkxvd6ejecypxs4pqrez3-0.0.2-py3-none-any.whl
         - pypi: https://github.com/jevangoh/msjzm0ilrcvjjguhp29y62uzk/releases/download/v0.0.2/msjzm0ilrcvjjguhp29y62uzk-0.0.2-py3-none-any.whl
         - pypi: https://github.com/jevangoh/q6uwngw0268p337x2mz5z8yi3/releases/download/v0.0.8/q6uwngw0268p337x2mz5z8yi3-0.0.8-py3-none-any.whl
-        - pypi: https://github.com/jevangoh/skkrfl6asevwuubvfioii3hlm/releases/download/v0.0.6/skkrfl6asevwuubvfioii3hlm-0.0.6-py3-none-any.whl
+        - pypi: https://github.com/jevangoh/skkrfl6asevwuubvfioii3hlm/releases/download/v0.0.7/skkrfl6asevwuubvfioii3hlm-0.0.7-py3-none-any.whl
         - pypi: https://github.com/jevangoh/xtqz1bv8mlviwo7a892eslt6x/releases/download/v0.0.2/xtqz1bv8mlviwo7a892eslt6x-0.0.2-py3-none-any.whl
       linux-aarch64:
         - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/_openmp_mutex-4.5-20_gnu.conda
@@ -263,7 +263,7 @@ environments:
         - pypi: https://github.com/jevangoh/eibzpkxvd6ejecypxs4pqrez3/releases/download/v0.0.2/eibzpkxvd6ejecypxs4pqrez3-0.0.2-py3-none-any.whl
         - pypi: https://github.com/jevangoh/msjzm0ilrcvjjguhp29y62uzk/releases/download/v0.0.2/msjzm0ilrcvjjguhp29y62uzk-0.0.2-py3-none-any.whl
         - pypi: https://github.com/jevangoh/q6uwngw0268p337x2mz5z8yi3/releases/download/v0.0.8/q6uwngw0268p337x2mz5z8yi3-0.0.8-py3-none-any.whl
-        - pypi: https://github.com/jevangoh/skkrfl6asevwuubvfioii3hlm/releases/download/v0.0.6/skkrfl6asevwuubvfioii3hlm-0.0.6-py3-none-any.whl
+        - pypi: https://github.com/jevangoh/skkrfl6asevwuubvfioii3hlm/releases/download/v0.0.7/skkrfl6asevwuubvfioii3hlm-0.0.7-py3-none-any.whl
         - pypi: https://github.com/jevangoh/xtqz1bv8mlviwo7a892eslt6x/releases/download/v0.0.2/xtqz1bv8mlviwo7a892eslt6x-0.0.2-py3-none-any.whl
       win-64:
         - conda: https://conda.anaconda.org/conda-forge/noarch/ca-certificates-2026.10.23-h4c7d964_0.conda
@@ -339,7 +339,7 @@ environments:
         - pypi: https://github.com/jevangoh/eibzpkxvd6ejecypxs4pqrez3/releases/download/v0.0.2/eibzpkxvd6ejecypxs4pqrez3-0.0.2-py3-none-any.whl
         - pypi: https://github.com/jevangoh/msjzm0ilrcvjjguhp29y62uzk/releases/download/v0.0.2/msjzm0ilrcvjjguhp29y62uzk-0.0.2-py3-none-any.whl
         - pypi: https://github.com/jevangoh/q6uwngw0268p337x2mz5z8yi3/releases/download/v0.0.8/q6uwngw0268p337x2mz5z8yi3-0.0.8-py3-none-any.whl
-        - pypi: https://github.com/jevangoh/skkrfl6asevwuubvfioii3hlm/releases/download/v0.0.6/skkrfl6asevwuubvfioii3hlm-0.0.6-py3-none-any.whl
+        - pypi: https://github.com/jevangoh/skkrfl6asevwuubvfioii3hlm/releases/download/v0.0.7/skkrfl6asevwuubvfioii3hlm-0.0.7-py3-none-any.whl
         - pypi: https://github.com/jevangoh/xtqz1bv8mlviwo7a892eslt6x/releases/download/v0.0.2/xtqz1bv8mlviwo7a892eslt6x-0.0.2-py3-none-any.whl
   dev:
     channels:
@@ -519,7 +519,7 @@ environments:
         - pypi: https://github.com/jevangoh/eibzpkxvd6ejecypxs4pqrez3/releases/download/v0.0.2/eibzpkxvd6ejecypxs4pqrez3-0.0.2-py3-none-any.whl
         - pypi: https://github.com/jevangoh/msjzm0ilrcvjjguhp29y62uzk/releases/download/v0.0.2/msjzm0ilrcvjjguhp29y62uzk-0.0.2-py3-none-any.whl
         - pypi: https://github.com/jevangoh/q6uwngw0268p337x2mz5z8yi3/releases/download/v0.0.8/q6uwngw0268p337x2mz5z8yi3-0.0.8-py3-none-any.whl
-        - pypi: https://github.com/jevangoh/skkrfl6asevwuubvfioii3hlm/releases/download/v0.0.6/skkrfl6asevwuubvfioii3hlm-0.0.6-py3-none-any.whl
+        - pypi: https://github.com/jevangoh/skkrfl6asevwuubvfioii3hlm/releases/download/v0.0.7/skkrfl6asevwuubvfioii3hlm-0.0.7-py3-none-any.whl
         - pypi: https://github.com/jevangoh/xtqz1bv8mlviwo7a892eslt6x/releases/download/v0.0.2/xtqz1bv8mlviwo7a892eslt6x-0.0.2-py3-none-any.whl
       linux-aarch64:
         - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/_openmp_mutex-4.5-20_gnu.conda
@@ -692,7 +692,7 @@ environments:
         - pypi: https://github.com/jevangoh/eibzpkxvd6ejecypxs4pqrez3/releases/download/v0.0.2/eibzpkxvd6ejecypxs4pqrez3-0.0.2-py3-none-any.whl
         - pypi: https://github.com/jevangoh/msjzm0ilrcvjjguhp29y62uzk/releases/download/v0.0.2/msjzm0ilrcvjjguhp29y62uzk-0.0.2-py3-none-any.whl
         - pypi: https://github.com/jevangoh/q6uwngw0268p337x2mz5z8yi3/releases/download/v0.0.8/q6uwngw0268p337x2mz5z8yi3-0.0.8-py3-none-any.whl
-        - pypi: https://github.com/jevangoh/skkrfl6asevwuubvfioii3hlm/releases/download/v0.0.6/skkrfl6asevwuubvfioii3hlm-0.0.6-py3-none-any.whl
+        - pypi: https://github.com/jevangoh/skkrfl6asevwuubvfioii3hlm/releases/download/v0.0.7/skkrfl6asevwuubvfioii3hlm-0.0.7-py3-none-any.whl
         - pypi: https://github.com/jevangoh/xtqz1bv8mlviwo7a892eslt6x/releases/download/v0.0.2/xtqz1bv8mlviwo7a892eslt6x-0.0.2-py3-none-any.whl
       win-64:
         - conda: https://conda.anaconda.org/conda-forge/noarch/ca-certificates-2026.10.23-h4c7d964_0.conda
@@ -808,7 +808,7 @@ environments:
         - pypi: https://github.com/jevangoh/eibzpkxvd6ejecypxs4pqrez3/releases/download/v0.0.2/eibzpkxvd6ejecypxs4pqrez3-0.0.2-py3-none-any.whl
         - pypi: https://github.com/jevangoh/msjzm0ilrcvjjguhp29y62uzk/releases/download/v0.0.2/msjzm0ilrcvjjguhp29y62uzk-0.0.2-py3-none-any.whl
         - pypi: https://github.com/jevangoh/q6uwngw0268p337x2mz5z8yi3/releases/download/v0.0.8/q6uwngw0268p337x2mz5z8yi3-0.0.8-py3-none-any.whl
-        - pypi: https://github.com/jevangoh/skkrfl6asevwuubvfioii3hlm/releases/download/v0.0.6/skkrfl6asevwuubvfioii3hlm-0.0.6-py3-none-any.whl
+        - pypi: https://github.com/jevangoh/skkrfl6asevwuubvfioii3hlm/releases/download/v0.0.7/skkrfl6asevwuubvfioii3hlm-0.0.7-py3-none-any.whl
         - pypi: https://github.com/jevangoh/xtqz1bv8mlviwo7a892eslt6x/releases/download/v0.0.2/xtqz1bv8mlviwo7a892eslt6x-0.0.2-py3-none-any.whl
 packages:
   - conda: https://conda.anaconda.org/conda-forge/linux-64/_openmp_mutex-4.5-20_gnu.conda
@@ -5426,7 +5426,7 @@ packages:
       - msjzm0ilrcvjjguhp29y62uzk>=0.0.2,<0.0.3
       - pydantic>=2.14.1,<3
       - q6uwngw0268p337x2mz5z8yi3>=0.0.8,<0.0.9
-      - skkrfl6asevwuubvfioii3hlm>=0.0.6,<0.0.7
+      - skkrfl6asevwuubvfioii3hlm>=0.0.7,<0.0.8
     requires_python: ">=3.15"
   - pypi: https://files.pythonhosted.org/packages/02/f0/35e94ecd6eab935705e68cfb33af06d27db4693a49214171a9adfcecb756/prek-0.5.11-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
     name: prek
@@ -6091,9 +6091,9 @@ packages:
       - msjzm0ilrcvjjguhp29y62uzk>=0.0.2,<0.0.3
       - redis>=8.1.0,<9
     requires_python: ">=3.14"
-  - pypi: https://github.com/jevangoh/skkrfl6asevwuubvfioii3hlm/releases/download/v0.0.6/skkrfl6asevwuubvfioii3hlm-0.0.6-py3-none-any.whl
+  - pypi: https://github.com/jevangoh/skkrfl6asevwuubvfioii3hlm/releases/download/v0.0.7/skkrfl6asevwuubvfioii3hlm-0.0.7-py3-none-any.whl
     name: skkrfl6asevwuubvfioii3hlm
-    version: 0.0.6
+    version: 0.0.7
     index: https://jevangoh.github.io/as1oocnl0leb61sj1yew20lt2/
     requires_dist:
       - sqlalchemy>=2.1.6,<3
