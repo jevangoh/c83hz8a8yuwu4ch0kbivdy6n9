@@ -2,7 +2,7 @@
 
 [[repository]](https://github.com/jevangoh/c83hz8a8yuwu4ch0kbivdy6n9) [[documentation]](https://c83hz8a8yuwu4ch0kbivdy6n9.readthedocs.io/en/latest/)
 
-Python descriptor to auto persists skkrfl6asevwuubvfioii3hlm during initialization.
+Python descriptor to make skkrfl6asevwuubvfioii3hlm remote
 
 <!-- do not remove or edit this section -->
 
