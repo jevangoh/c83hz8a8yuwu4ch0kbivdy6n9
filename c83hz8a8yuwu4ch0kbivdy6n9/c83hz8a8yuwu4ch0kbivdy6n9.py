@@ -47,6 +47,20 @@ def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
                     f"{self._base_url}/{self.__tablename__}", json=self.model_dump(mode="json")
                 )
                 _create_object_response_.raise_for_status()
+            else:
+                _object_exists_response_.raise_for_status()
+                _object_data: dict[str, Any] = _object_exists_response_.json()
+                for _attribute_name_, _new_value_ in _object_data.items():
+                    if not hasattr(self, _attribute_name_):
+                        continue
+                    _object_attribute_ = getattr(self, _attribute_name_)
+                    if isinstance(_object_attribute_, ReadableAndWritableDependency._):
+                        _object_attribute_.value = _new_value_
+                    elif _attribute_name_ == "id":
+                        setattr(self, _attribute_name_, Uuid(_new_value_))
+                    else:
+                        setattr(self, _attribute_name_, _new_value_)
+
             the_redis_listening_thread._.update_signals[self.id].emitted.connect(
                 self.handle_redis_update, Qt.ConnectionType.DirectConnection
             )
@@ -71,6 +85,8 @@ def c83hz8a8yuwu4ch0kbivdy6n9[Model: BaseModel._](
                 _object_attribute_ = getattr(self, _attribute_name_)
                 if isinstance(_object_attribute_, ReadableAndWritableDependency._):
                     _object_attribute_.value = _new_value_
+                elif _attribute_name_ == "id":
+                    setattr(self, _attribute_name_, Uuid(_new_value_))
                 else:
                     setattr(self, _attribute_name_, _new_value_)
             if request_id in self._active_requests:
